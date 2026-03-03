@@ -879,7 +879,7 @@ img {
   align-items: center;
   gap: 22px;
   width: max-content;
-  animation: brandScroll 26s linear infinite;
+  animation: brandScroll 22s linear infinite;
   will-change: transform;
 }
 
