@@ -106,25 +106,24 @@ img {
   background: var(--surface);
 }
 
-.nav-toggle {
-  display: none;
+.nav-toggle{
   width: 44px;
   height: 44px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: white;
-  box-shadow: var(--shadow);
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.85);
+  display: grid;
+  place-items: center;
+  gap: 6px;
 }
 
-.nav-toggle span {
-  display: block;
-  width: 18px;
+.nav-toggle span{
+  display:block;
+  width: 22px;
   height: 2px;
-  background: var(--charcoal);
+  background: rgba(0,0,0,.75);
   border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
 .btn {
