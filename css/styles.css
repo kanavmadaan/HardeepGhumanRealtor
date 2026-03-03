@@ -809,7 +809,7 @@ img {
 
   /* ✅ ONLY ONE nav-toggle rule on mobile (no conflicts) */
   .nav-toggle {
-    display: grid;
+    display: flex;
     place-items: center;
     gap: 6px;
   }
