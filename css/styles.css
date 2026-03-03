@@ -106,14 +106,22 @@ img {
   background: var(--surface);
 }
 
+/* Hamburger (mobile) — tight, premium spacing */
 .nav-toggle{
-  display: none;            /* ✅ hide on desktop */
+  display: none; /* still hidden on desktop */
   width: 44px;
   height: 44px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,.10);
   background: rgba(255,255,255,.85);
-  place-items: center;
+  cursor: pointer;
+  padding: 0;
+
+  /* ✅ stack the 3 lines properly */
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
 }
 
 .nav-toggle span{
