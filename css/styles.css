@@ -774,7 +774,7 @@ img {
 }
 
 @media (max-width: 920px) {
-  .nav-toggle{ display: grid; }   /* ✅ show on mobile */
+
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -799,8 +799,11 @@ img {
     grid-template-columns: 1fr;
   }
 
+  /* ✅ ONLY ONE nav-toggle rule on mobile (no conflicts) */
   .nav-toggle {
-    display: inline-flex;
+    display: grid;
+    place-items: center;
+    gap: 6px;
   }
 
   .site-nav {
@@ -827,27 +830,6 @@ img {
     padding: 12px 12px;
   }
 }
-
-
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .brand-carousel img {
-    animation: none;
-    opacity: .14;
-    position: static;
-    transform: none;
-    display: inline-block;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  .brand-carousel {
-    height: auto;
-    overflow: visible;
-  }
-}
-
 
 /* --- Affiliations moving logo strip --- */
 .brand-strip {
@@ -910,13 +892,8 @@ img {
 }
 
 @keyframes brandScroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 640px) {
@@ -946,7 +923,6 @@ img {
     -webkit-mask-image: none;
   }
 }
-
 
 /* --- Hero blended portrait (desktop: side blend; mobile: top block) --- */
 .hero {
