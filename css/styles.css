@@ -1358,3 +1358,17 @@ img {
   .stagger-img{ min-height: 220px; }
 }
 
+/* Mobile: always show image first, then text for stagger rows */
+@media (max-width: 920px){
+  .stagger-row{
+    grid-template-columns: 1fr;
+  }
+
+  .stagger-row .stagger-img{
+    order: 1;
+  }
+
+  .stagger-row .stagger-text{
+    order: 2;
+  }
+}
