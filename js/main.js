@@ -13,6 +13,28 @@
       toggle.setAttribute("aria-expanded", String(!isOpen));
       nav.classList.toggle("open", !isOpen);
     });
+
+  // Submenus (Buying / Selling) on mobile
+  const submenus = document.querySelectorAll("[data-submenu]");
+  if (submenus.length) {
+    submenus.forEach((wrap) => {
+      const btn = wrap.querySelector(".nav-link-btn");
+      const panel = wrap.querySelector(".sub-nav");
+      if (!btn || !panel) return;
+
+      btn.addEventListener("click", (e) => {
+        // On desktop, allow hover behavior
+        if (window.matchMedia("(min-width: 921px)").matches) return;
+
+        const isOpen = wrap.classList.contains("open");
+        // close others
+        submenus.forEach((w) => { if (w !== wrap) { w.classList.remove("open"); const b=w.querySelector(".nav-link-btn"); if(b) b.setAttribute("aria-expanded","false"); } });
+        wrap.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+  }
+
   }
 
   // Gallery modal
